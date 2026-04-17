@@ -26,11 +26,14 @@ jobs:
       - name: Run Lifecycle Scripts
         run: yarn exec allow-scripts
 
-      - name: Build (generates fs.9p.json + Next.js build)
+      - name: Build
         run: yarn build
 
-      - name: Export static site
+      - name: Export
         run: yarn deploy
+
+      - name: Add .nojekyll
+        run: touch out/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
