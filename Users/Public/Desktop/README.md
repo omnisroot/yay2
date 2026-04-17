@@ -1,4 +1,4 @@
-# hello, im kumavis
+# hello, im omni
 
 you can find some of my work on the desktop
 
