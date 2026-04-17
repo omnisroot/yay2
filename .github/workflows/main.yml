@@ -1,4 +1,4 @@
-name: Deploy
+name: Build and Deploy
 
 permissions:
   contents: write
@@ -8,11 +8,31 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Run Lifecycle Scripts
+        run: yarn exec allow-scripts
+
+      - name: Build (generates fs.9p.json + Next.js build)
+        run: yarn build
+
+      - name: Export static site
+        run: yarn deploy
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
