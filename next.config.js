@@ -12,8 +12,6 @@ const webpack = require("webpack");
  * @type {import("next").NextConfig}
  * */
 const nextConfig = {
-  basePath: '/yay2',
-  assetPrefix: '/yay2/',
   eslint: {
     ignoreDuringBuilds: true,
   },
