@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9886],{69886:function(e,n,s){s.r(n);var t=s(85893),_=s(22424);n.default=({content:e})=>(0,t.jsx)("div",{dangerouslySetInnerHTML:{__html:(0,_.sanitize)(e,{ALLOWED_ATTR:["src"],ALLOWED_TAGS:["br","img"]})}})}}]);
