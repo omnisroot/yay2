@@ -1,11 +1,11 @@
 {
-  "name": "kumavOS",
+  "name": "omniOS",
   "version": "2.0.0",
   "description": "Desktop environment in the browser",
   "author": {
-    "name": "kumavis",
-    "email": "aaron@kumavis.me",
-    "url": "https://os.kumavis.me"
+    "name": "omni",
+    "email": "omnynia@proton.me",
+    "url": "https://os.tropius.dev"
   },
   "license": "MIT",
   "browserslist": [
