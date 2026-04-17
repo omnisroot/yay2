@@ -1,31 +1,18 @@
-name: Test and Deploy
+name: Deploy
 
 permissions:
   contents: write
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
 
 jobs:
-  test-and-deploy:
-    timeout-minutes: 60
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Enable Corepack
-        run: corepack enable
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install Dependencies
-        run: yarn install
-      - name: Run Dependency Lifecycle Scripts
-        run: yarn exec allow-scripts
-      - name: Build App
-        run: yarn build
-      - name: Run pre-Deploy
-        run: yarn deploy
-      - name: Deployment
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
